@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
             uid: user.uid,
             nombre: nombre,
             email: email,
-            role: role || 'admin' // Guarda el rol si está definido, de lo contrario, 'user'
+            role: role || 'users' // Guarda el rol si está definido, de lo contrario, 'user'
           }).then(() => {
             this.anadir()
             this.verificarCorreo();
