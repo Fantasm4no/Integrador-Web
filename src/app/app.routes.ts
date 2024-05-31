@@ -22,5 +22,6 @@ export const routes: Routes = [
     { path: 'eliminar', component: EliminarLibroComponent, canActivate: [adminGuard]}, 
     { path: 'verificar', component: VerificarComponent},
     { path: 'mi-perfil', component: MiPerfilComponent},
-    { path: 'usuarios',component:AdminUsersComponent, canActivate: [adminGuard]}
+    { path: 'usuarios',component:AdminUsersComponent, canActivate: [adminGuard]},
+    { path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
