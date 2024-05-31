@@ -21,24 +21,27 @@ export class AdminUsersComponent {
     this.loadUsers();
   }
 
+
+  editUser(user: User): void {
+    user.editing = true;
+  }
+
   loadUsers(): void {
     this.usersService.getUsers().subscribe((users) => {
       this.users = users;
     });
   }
 
-  editUser(user: User): void {
-    user.editing = true;
-  }
-
   saveUser(user: User): void {
-    user.editing = false;
-    this.usersService.updateUserDetails(user.id, user)
-      .then(() => {
-        console.log('Usuario actualizado:', user);
-      })
-      .catch(error => {
-        console.error('Error al actualizar usuario:', error);
-      });
-  }
+  console.log('Guardando usuario:', user);
+  user.editing = false;
+  this.usersService.updateUserDetails(user.id, user)
+    .then(() => {
+      console.log('Usuario actualizado:', user);
+    })
+    .catch(error => {
+      console.error('Error al actualizar usuario:', error);
+    });
+}
+
 }

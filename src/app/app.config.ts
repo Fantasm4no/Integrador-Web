@@ -10,6 +10,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
 export const appConfig: ApplicationConfig = {
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideFirestore(() => getFirestore()),
     provideHttpClient(withFetch()), 
     importProvidersFrom(
-      AngularFireModule.initializeApp(environments.firebaseConfig), 
+      AngularFireModule.initializeApp(environments.firebaseConfig), AngularFirestoreModule,
       BrowserAnimationsModule
     ),
     provideAuth(() => getAuth())

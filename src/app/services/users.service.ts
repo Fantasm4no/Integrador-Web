@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { GoogleAuthProvider,  } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Firestore } from '@angular/fire/firestore';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc } from 'firebase/firestore';
-import { Observable } from 'rxjs';
+import { Firestore, collectionData } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
+import { QuerySnapshot, addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc } from 'firebase/firestore';
+import { Observable, from, map } from 'rxjs';
 import { Users } from '../domain/user';
 
 export interface User {
@@ -59,10 +59,20 @@ export class UsersService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.afs.collection<User>('usuarios').valueChanges({ idField: 'uid' });
+    const userCollection = collection(this.firestore, 'usuarios');
+    return from(getDocs(query(userCollection))).pipe(
+      map((querySnapshot: QuerySnapshot<DocumentData>) => {
+        return querySnapshot.docs.map(doc => {
+          const data = doc.data() as User;
+          data.id = doc.id;
+          return data;
+        });
+      })
+    );
   }
 
   updateUserDetails(uid: string, user: User): Promise<void> {
-    return this.afs.collection('usuarios').doc(uid).update(user);
+    const userDoc = doc(this.firestore, `${'usuarios'}/${uid}`);
+    return updateDoc(userDoc, { ...user });
   }
 }

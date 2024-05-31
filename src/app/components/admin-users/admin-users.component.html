@@ -23,27 +23,28 @@
             <tr *ngFor="let user of users" class="fila-usuario">
                 <td class="campo-nombre" *ngIf="!user.editing">{{ user.nombre }}</td>
                 <td class="campo-nombre-editar" *ngIf="user.editing"><input [(ngModel)]="user.nombre"></td>
-
+            
                 <td class="campo-apellido" *ngIf="!user.editing">{{user.apellido}}</td>
-                <td class="campo-apellido-editar" *ngIf="!user.editing"><input [(ngModel)]="user.apellido"></td>
-
+                <td class="campo-apellido-editar" *ngIf="user.editing"><input [(ngModel)]="user.apellido"></td>
+            
                 <td class="campo-rol" *ngIf="!user.editing">{{ user.role }}</td>
                 <td class="campo-rol-editar" *ngIf="user.editing"><input [(ngModel)]="user.role"></td>
-
+            
                 <td class="campo-email" *ngIf="!user.editing">{{ user.email }}</td>
                 <td class="campo-email-editar" *ngIf="user.editing"><input [(ngModel)]="user.email"></td>
-
+            
                 <td class="campo-phone" *ngIf="!user.editing">{{ user.phone }}</td>
                 <td class="campo-phone-editar" *ngIf="user.editing"><input [(ngModel)]="user.phone"></td>
-
+            
                 <td class="campo-biography" *ngIf="!user.editing">{{ user.biography }}</td>
                 <td class="campo-biography-editar" *ngIf="user.editing"><input [(ngModel)]="user.biography"></td>
-
+            
                 <td class="acciones">
                     <button class="button editar" *ngIf="!user.editing" (click)="editUser(user)">Editar</button>
                     <button class="button guardar" *ngIf="user.editing" (click)="saveUser(user)">Guardar</button>
                 </td>
             </tr>
+                        
         </tbody>
     </table>
 </body>

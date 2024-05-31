@@ -23,7 +23,7 @@ export const adminGuard: CanActivateFn = (route, state) => {
         router.navigate(['/login']);
         return of(false);
       }
-      return afs.doc<User>(`users/${user.uid}`).valueChanges().pipe(
+      return afs.doc<User>(`usuarios/${user.uid}`).valueChanges().pipe(
         map(userDoc => {
           if (!userDoc || userDoc.role !== 'admin') {
             router.navigate(['/dashboard']);

@@ -1,0 +1,36 @@
+[debug] [2024-05-31T07:20:25.107Z] ----------------------------------------------------------------------
+[debug] [2024-05-31T07:20:25.111Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\erick\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-05-31T07:20:25.112Z] CLI Version:   13.10.2
+[debug] [2024-05-31T07:20:25.112Z] Platform:      win32
+[debug] [2024-05-31T07:20:25.112Z] Node Version:  v21.7.3
+[debug] [2024-05-31T07:20:25.113Z] Time:          Fri May 31 2024 02:20:25 GMT-0500 (hora de Ecuador)
+[debug] [2024-05-31T07:20:25.113Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-31T07:20:25.190Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-31T07:20:25.191Z] > authorizing via signed-in user (erickzhigue@gmail.com)
+[debug] [2024-05-31T07:20:25.191Z] [iam] checking project library-d9fcb for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-31T07:20:25.193Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/library-d9fcb:testIamPermissions [none]
+[debug] [2024-05-31T07:20:25.193Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/library-d9fcb:testIamPermissions x-goog-quota-user=projects/library-d9fcb
+[debug] [2024-05-31T07:20:25.193Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/library-d9fcb:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-31T07:20:25.897Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/library-d9fcb:testIamPermissions 200
+[debug] [2024-05-31T07:20:25.898Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/library-d9fcb:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-31T07:20:25.900Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/library-d9fcb [none]
+[debug] [2024-05-31T07:20:26.448Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/library-d9fcb 200
+[debug] [2024-05-31T07:20:26.449Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/library-d9fcb {"projectId":"library-d9fcb","projectNumber":"583781859225","displayName":"Library","name":"projects/library-d9fcb","resources":{"hostingSite":"library-d9fcb"},"state":"ACTIVE","etag":"1_ae5bb2c3-a99d-487c-a18b-cd7abe9fad01"}
+[debug] [2024-05-31T07:20:35.105Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/library-d9fcb/sites pageToken=&pageSize=10
+[debug] [2024-05-31T07:20:36.131Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/library-d9fcb/sites 200
+[debug] [2024-05-31T07:20:36.132Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/library-d9fcb/sites {"sites":[{"name":"projects/library-d9fcb/sites/library-d9fcb","defaultUrl":"https://library-d9fcb.web.app","appId":"1:583781859225:web:68344d9b6bed015516dd08","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-31T07:20:36.136Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:583781859225:web:68344d9b6bed015516dd08/config [none]
+[debug] [2024-05-31T07:20:36.922Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:583781859225:web:68344d9b6bed015516dd08/config 200
+[debug] [2024-05-31T07:20:36.923Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:583781859225:web:68344d9b6bed015516dd08/config {"projectId":"library-d9fcb","appId":"1:583781859225:web:68344d9b6bed015516dd08","storageBucket":"library-d9fcb.appspot.com","apiKey":"AIzaSyA_udLRhfbf1NIXljbH0UM4IQK02-xOiD4","authDomain":"library-d9fcb.firebaseapp.com","messagingSenderId":"583781859225"}
+[info] 
+   Thank you for trying our early preview of Angular support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Angular version 14 - 17. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/angular
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
