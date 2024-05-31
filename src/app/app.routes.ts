@@ -7,7 +7,6 @@ import { AnadirLibroComponent } from './components/anadir-libro/anadir-libro.com
 import { ActualizarLibroComponent } from './components/actualizar-libro/actualizar-libro.component';
 import { EliminarLibroComponent } from './components/eliminar-libro/eliminar-libro.component';
 import { VerificarComponent } from './components/verificar/verificar.component';
-import { adminGuard } from './domain/admin.guard';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 
@@ -17,10 +16,10 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'recuperar-pswrd', component: RecuperarPswdComponent },
-    { path: 'anadir', component: AnadirLibroComponent, canActivate: [adminGuard] },
-    { path: 'actualizar', component: ActualizarLibroComponent, canActivate: [adminGuard]}, 
-    { path: 'eliminar', component: EliminarLibroComponent, canActivate: [adminGuard]}, 
+    { path: 'anadir', component: AnadirLibroComponent},
+    { path: 'actualizar', component: ActualizarLibroComponent}, 
+    { path: 'eliminar', component: EliminarLibroComponent}, 
     { path: 'verificar', component: VerificarComponent },
     { path: 'mi-perfil', component: MiPerfilComponent},
-    { path: 'usuarios',component:AdminUsersComponent, canActivate: [adminGuard]}
+    { path: 'usuarios',component:AdminUsersComponent}
 ];

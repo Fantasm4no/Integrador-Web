@@ -58,8 +58,8 @@ export class UsersService {
     return updateDoc(userDoc, data);
   }
 
-  getUsers(): Observable<Users[]> {
-    return this.afs.collection<Users>('usuarios').valueChanges({ idField: 'uid' });
+  getUsers(): Observable<User[]> {
+    return this.afs.collection<User>('usuarios').valueChanges({ idField: 'uid' });
   }
 
   updateUserDetails(uid: string, user: User): Promise<void> {
